@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alvin Asenga — IT Support, Web Dev & Security, Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1a1410;
+    --bg-alt: #20180f;
+    --surface: #2a2018;
+    --surface-2: #251c14;
+    --text: #f3e9dc;
+    --text-dim: #b3a290;
+    --text-faint: #80715f;
+    --clay: #d9713c;
+    --clay-soft: rgba(217,113,60,0.16);
+    --sky: #6fa8b5;
+    --sky-soft: rgba(111,168,181,0.16);
+    --line: rgba(243,233,220,0.12);
+    --line-strong: rgba(243,233,220,0.22);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before{
+    content:'';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(217,113,60,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 100% 10%, rgba(111,168,181,0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight: 600; letter-spacing: -0.01em; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+  }
+
+  a{ color: inherit; text-decoration:none; }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position: fixed; top:0; left:0; right:0; z-index: 50;
+    background: rgba(26,20,16,0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height: 64px;
+  }
+  .logo{
+    font-family:'Fraunces', serif; font-weight:600; font-size:18px; letter-spacing:0.01em;
+  }
+  .navlinks{ display:flex; align-items:center; gap: 28px; }
+  .navlinks a{
+    font-size: 14px; color: var(--text-dim); transition: color .2s ease;
+  }
+  .navlinks a:hover{ color: var(--text); }
+  .status-pill{
+    display:flex; align-items:center; gap:7px;
+    font-family:'IBM Plex Mono', monospace; font-size: 11px;
+    color: var(--text-dim);
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    padding: 6px 12px;
+  }
+  .status-dot{
+    width:6px; height:6px; border-radius:50%;
+    background: #7cc88f;
+    box-shadow: 0 0 0 0 rgba(124,200,143,0.6);
+    animation: pulse-dot 2.4s infinite;
+  }
+  @keyframes pulse-dot{
+    0%{ box-shadow: 0 0 0 0 rgba(124,200,143,0.5); }
+    70%{ box-shadow: 0 0 0 7px rgba(124,200,143,0); }
+    100%{ box-shadow: 0 0 0 0 rgba(124,200,143,0); }
+  }
+
+  @media (max-width: 720px){
+    .navlinks a:not(.status-pill){ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding: 168px 0 96px;
+    position: relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero h1{
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.04;
+    margin: 18px 0 22px;
+  }
+  .hero h1 em{
+    font-style: italic;
+    color: var(--clay);
+  }
+  .hero p.lede{
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 46ch;
+    margin-bottom: 32px;
+  }
+  .cta-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    padding: 13px 22px;
+    border-radius: 8px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn-primary{
+    background: var(--clay);
+    color: #1a1410;
+    font-weight: 500;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); background:#e58a59; }
+  .btn-ghost{
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+  }
+  .btn-ghost:hover{ transform: translateY(-2px); border-color: var(--sky); }
+
+  .btn-dl{
+    font-family:'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing:.02em;
+    border: 1px solid var(--line-strong); color: var(--text-dim);
+    padding: 11px 18px; border-radius: 9px;
+    display:inline-flex; align-items:center; gap: 8px;
+    transition: transform .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .btn-dl:hover{ transform: translateY(-2px); border-color: var(--clay); color: var(--clay); }
+
+  /* signal arc */
+  .arc-box{ position: relative; height: 360px; }
+  .arc-box svg{ width: 100%; height: 100%; overflow: visible; }
+  .arc-path{
+    fill:none; stroke: var(--line-strong); stroke-width: 1.5;
+    stroke-dasharray: 6 7;
+  }
+  .arc-path-glow{
+    fill:none; stroke: var(--clay); stroke-width: 1.5;
+    stroke-dasharray: 480;
+    stroke-dashoffset: 480;
+    animation: draw-arc 2.2s ease forwards .4s;
+    opacity: 0.85;
+  }
+  @keyframes draw-arc{ to{ stroke-dashoffset: 0; } }
+  .node{ font-family:'IBM Plex Mono', monospace; font-size: 11px; fill: var(--text-dim); }
+  .node-label-strong{ fill: var(--text); font-weight: 500; }
+  .node-dot{ fill: var(--clay); }
+  .node-dot.dest{ fill: var(--sky); }
+  .pulse-ring{
+    fill: none; stroke: var(--clay); stroke-width: 1.5;
+    transform-origin: center;
+    animation: ring 2.6s ease-out infinite;
+  }
+  @keyframes ring{
+    0%{ r:5; opacity:.9; }
+    100%{ r:20; opacity:0; }
+  }
+
+  @media (max-width: 880px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .arc-box{ height: 220px; order: -1; }
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding: 84px 0; position: relative; }
+  section.alt{ background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .section-head{ margin-bottom: 44px; max-width: 60ch; }
+  .section-head h2{ font-size: clamp(28px,3.4vw,38px); margin-top: 10px; }
+
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform: none; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+  }
+  .about-grid p{ color: var(--text-dim); margin-bottom: 16px; font-size: 15.5px; }
+  .terminal{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+    color: var(--text-dim);
+  }
+  .terminal .line{ margin-bottom: 9px; }
+  .terminal .prompt{ color: var(--sky); }
+  .terminal .val{ color: var(--text); }
+  @media (max-width: 780px){ .about-grid{ grid-template-columns: 1fr; } }
+
+  /* ---------- SKILLS ---------- */
+  .skill-cols{
+    display:grid; grid-template-columns: repeat(3,1fr); gap: 22px;
+  }
+  .skill-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px 24px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+  .skill-card:hover{ border-color: var(--line-strong); transform: translateY(-3px); }
+  .skill-card .tag{
+    font-family:'IBM Plex Mono', monospace; font-size: 11px; letter-spacing:.08em;
+    text-transform: uppercase; color: var(--clay); margin-bottom: 12px; display:block;
+  }
+  .skill-card h3{ font-size: 19px; margin-bottom: 14px; }
+  .skill-card ul{ list-style:none; }
+  .skill-card li{
+    font-size: 13.5px; color: var(--text-dim);
+    padding: 7px 0; border-top: 1px solid var(--line);
+  }
+  .skill-card li:first-of-type{ border-top:none; }
+  @media (max-width: 780px){ .skill-cols{ grid-template-columns: 1fr; } }
+
+  /* ---------- WORK ---------- */
+  .work-list{ display:flex; flex-direction:column; gap: 18px; }
+  .work-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: border-color .25s ease, background .25s ease, transform .12s ease-out;
+  }
+  .work-card:hover{ border-color: var(--sky); background: var(--surface-2); }
+  .work-thumb{
+    width: 100%; aspect-ratio: 16/9; object-fit: cover; display:block;
+    border-bottom: 1px solid var(--line);
+    background: var(--surface-2);
+  }
+  .work-thumb-placeholder{
+    width:100%; aspect-ratio:16/9; border-bottom:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    background: repeating-linear-gradient(135deg, var(--surface-2), var(--surface-2) 12px, var(--surface) 12px, var(--surface) 24px);
+    color: var(--text-faint); font-family:'IBM Plex Mono', monospace; font-size:11px; text-align:center; gap:8px; flex-direction:column;
+  }
+  .work-body{
+    padding: 28px 30px;
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .work-card .role{ font-family:'IBM Plex Mono', monospace; font-size: 12px; color: var(--sky); margin-bottom: 6px; letter-spacing:.04em; }
+  .work-card h3{ font-size: 22px; margin-bottom: 10px; }
+  .work-card .case-line{ color: var(--text-dim); font-size: 14px; max-width: 56ch; margin-bottom: 6px; }
+  .work-card .case-line b{ color: var(--text); font-weight: 500; }
+  .work-card p.tagline{ color: var(--text-dim); font-size: 14.5px; max-width: 56ch; margin: 10px 0 14px; }
+  .tags{ display:flex; flex-wrap:wrap; gap: 8px; }
+  .tags span{
+    font-family:'IBM Plex Mono', monospace; font-size: 11px;
+    border: 1px solid var(--line-strong); border-radius: 6px;
+    padding: 4px 9px; color: var(--text-dim);
+  }
+  .work-card .go{
+    font-family:'IBM Plex Mono', monospace; font-size: 13px;
+    border: 1px solid var(--line-strong); border-radius: 8px;
+    padding: 11px 18px; white-space: nowrap; transition: border-color .2s, color .2s;
+  }
+  .work-card:hover .go{ border-color: var(--clay); color: var(--clay); }
+  .work-card .go.pending{
+    color: var(--text-faint); cursor:default;
+  }
+  .work-card .go.pending:hover{ border-color: var(--line-strong); color: var(--text-faint); }
+  .work-card:hover .go.pending{ border-color: var(--line-strong); color: var(--text-faint); }
+  @media (max-width: 700px){
+    .work-body{ grid-template-columns: 1fr; }
+    .work-card .go{ justify-self: start; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: end;
+  }
+  .contact-grid h2{ font-size: clamp(32px,5vw,52px); margin: 14px 0 20px; }
+  .contact-grid p{ color: var(--text-dim); max-width: 44ch; margin-bottom: 26px; }
+  .mail-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: clamp(16px,2.2vw,20px);
+    color: var(--text);
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 6px;
+    display:inline-block;
+    transition: color .2s, border-color .2s;
+  }
+  .mail-link:hover{ color: var(--clay); border-color: var(--clay); }
+  .social-list{ display:flex; flex-direction:column; gap: 14px; }
+  .social-list a{
+    display:flex; justify-content:space-between; align-items:center;
+    padding: 14px 0; border-top: 1px solid var(--line);
+    font-size: 14.5px; color: var(--text-dim);
+    transition: color .2s, padding-left .2s;
+  }
+  .social-list a:hover{ color: var(--text); padding-left: 6px; }
+  .social-list a span.handle{ font-family:'IBM Plex Mono', monospace; color: var(--text); }
+  @media (max-width: 780px){ .contact-grid{ grid-template-columns: 1fr; } }
+
+  footer{
+    padding: 30px 0 40px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  .scroll-progress{
+    position: fixed; top:0; left:0; height: 2px; width: 0%;
+    background: linear-gradient(90deg, var(--clay), var(--sky));
+    z-index: 60; transition: width .1s linear;
+  }
+
+  /* ---------- CURSOR SPOTLIGHT ---------- */
+  header.hero{ position: relative; }
+  .spotlight{
+    position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background: radial-gradient(420px circle at var(--mx,50%) var(--my,30%), rgba(217,113,60,0.10), transparent 65%);
+    transition: background .15s ease-out;
+  }
+  .hero-grid{ position: relative; z-index: 1; }
+
+  /* ---------- ROTATING WORD ---------- */
+  .rotate-word{
+    color: var(--clay); font-style: italic; display: inline-block;
+    position: relative; transition: opacity .25s ease, transform .25s ease;
+  }
+  .rotate-word.swap{ opacity: 0; transform: translateY(6px); }
+
+  /* ---------- STAT COUNTERS ---------- */
+  .stat-strip{
+    display:flex; gap: 36px; flex-wrap: wrap; margin: 36px 0 0;
+    padding-top: 28px; border-top: 1px solid var(--line);
+  }
+  .stat-strip .stat{ min-width: 110px; }
+  .stat-strip .stat .num{
+    font-family:'Fraunces', serif; font-size: 30px; font-weight: 600; color: var(--text);
+    line-height: 1;
+  }
+  .stat-strip .stat .num .accent{ color: var(--clay); }
+  .stat-strip .stat .lbl{
+    font-family:'IBM Plex Mono', monospace; font-size: 11px; color: var(--text-dim);
+    letter-spacing: .03em; margin-top: 6px;
+  }
+
+  /* ---------- CARD TILT ---------- */
+  .work-card{ transform-style: preserve-3d; will-change: transform; }
+  .skill-card{ will-change: transform; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+    .arc-path-glow{ stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">A·S</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <span class="status-pill"><span class="status-dot"></span>Open to remote work</span>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="spotlight" id="spotlight"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Nairobi, Kenya</span>
+      <h1>I <span class="rotate-word" id="rotateWord">build</span> things,<br><em>then send the<br>signal out.</em></h1>
+      <p class="lede">Alvin Asenga — IT support and web development, with cybersecurity fundamentals underneath. I work across freelance platforms and direct projects, and I'm building toward a Computer Science degree abroad.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:alvinasenga8@gmail.com">Email me →</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
+        <a class="btn-dl" href="Alvin_Asenga_CV.docx" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Full CV
+        </a>
+        <a class="btn-dl" href="Alvin_Asenga_Resume.docx" download>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          1-page Resume
+        </a>
+      </div>
+      <div class="stat-strip">
+        <div class="stat"><div class="num"><span class="accent">5</span></div><div class="lbl">PROJECTS BUILT</div></div>
+        <div class="stat"><div class="num">3</div><div class="lbl">LIVE DEPLOYMENTS</div></div>
+        <div class="stat"><div class="num">4</div><div class="lbl">FREELANCE PLATFORMS</div></div>
+      </div>
+    </div>
+    <div class="arc-box">
+      <svg viewBox="0 0 360 360" preserveAspectRatio="xMidYMid meet">
+        <path class="arc-path" d="M 60 280 Q 180 70 300 90"></path>
+        <path class="arc-path-glow" d="M 60 280 Q 180 70 300 90"></path>
+
+        <circle class="pulse-ring" cx="60" cy="280" r="5"></circle>
+        <circle class="node-dot" cx="60" cy="280" r="5"></circle>
+        <text class="node node-label-strong" x="74" y="284">Nairobi</text>
+        <text class="node" x="74" y="300">based here</text>
+
+        <circle class="node-dot dest" cx="300" cy="90" r="5"></circle>
+        <text class="node node-label-strong" x="218" y="78">Italy</text>
+        <text class="node" x="208" y="64">CS / cybersecurity, next</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">About</span>
+      <h2>A diploma, a few platforms, and a habit of finishing things</h2>
+      <p>I hold an IT diploma from The Catholic University of Eastern Africa, with a background that spans Java, C++, and web fundamentals, plus self-directed work in cybersecurity and blockchain basics. I completed an industrial attachment at Tourism Fund, where I got my first real exposure to working IT systems in production.</p>
+      <p>Since then I've freelanced across Fiverr, Upwork, PeoplePerHour, and Remotasks — covering web development, technical writing, data entry, and IT support — while building and shipping my own projects on the side.</p>
+    </div>
+    <div class="terminal reveal">
+      <div class="line"><span class="prompt">$</span> whoami</div>
+      <div class="line val">Alvin Asenga — 21, Nairobi (Utawala)</div>
+      <div class="line"><span class="prompt">$</span> stack --list</div>
+      <div class="line val">Java · C++ · HTML/CSS · Web Dev · Cybersecurity Fundamentals · Blockchain Basics</div>
+      <div class="line"><span class="prompt">$</span> platforms</div>
+      <div class="line val">Fiverr · Upwork · PeoplePerHour · Remotasks</div>
+      <div class="line"><span class="prompt">$</span> status</div>
+      <div class="line val">Open to remote IT support & dev work, applying abroad for CS/cybersecurity</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="skills">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Skills</span>
+      <h2>Three ways I get useful</h2>
+    </div>
+    <div class="skill-cols">
+      <div class="skill-card reveal">
+        <span class="tag">Build</span>
+        <h3>Web & app development</h3>
+        <ul>
+          <li>HTML, CSS, front-end build & deploy</li>
+          <li>Java, C++ fundamentals</li>
+          <li>Shipping small apps end-to-end</li>
+          <li>GitHub Pages / static hosting</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <span class="tag">Secure</span>
+        <h3>IT support & security</h3>
+        <ul>
+          <li>Desktop & systems IT support</li>
+          <li>Cybersecurity fundamentals</li>
+          <li>Blockchain basics</li>
+          <li>Production exposure (Tourism Fund attachment)</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal">
+        <span class="tag">Operate</span>
+        <h3>Freelance craft</h3>
+        <ul>
+          <li>Technical & content writing</li>
+          <li>Data entry & research</li>
+          <li>Client communication across platforms</li>
+          <li>Project tracking & delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Work</span>
+      <h2>A few things I've shipped</h2>
+    </div>
+    <div class="work-list">
+      <div class="work-card reveal">
+        <div class="work-thumb-placeholder">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+          <span>victors-rescue-thumb.jpg</span>
+        </div>
+        <div class="work-body">
+          <div>
+            <div class="role">Built & deployed solo</div>
+            <h3>Victors Rescue CBO</h3>
+            <p class="case-line"><b>The problem:</b> a children's home in Isiolo County, founded by my uncle, had no online presence — no way for donors abroad to find or trust it.</p>
+            <p class="case-line"><b>What I built:</b> a full site plus an international donor outreach campaign — cold emails to Christian mission organizations and a targeted Facebook group strategy.</p>
+            <div class="tags"><span>Web Dev</span><span>HTML/CSS</span><span>Outreach</span><span>GitHub Pages</span></div>
+          </div>
+          <a class="go" href="https://alvin64-source.github.io/Victors-Rescue-CBO/" target="_blank" rel="noopener">Visit site →</a>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-thumb-placeholder">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+          <span>proconnect-thumb.jpg</span>
+        </div>
+        <div class="work-body">
+          <div>
+            <div class="role">Built & sold</div>
+            <h3>ProConnect</h3>
+            <p class="case-line"><b>The problem:</b> small businesses needed a simple way to find and book each other's services without going through a heavyweight enterprise platform.</p>
+            <p class="case-line"><b>What I built:</b> a B2B service marketplace app, built from scratch and sold on Gumroad — which also pushed me to set up Payoneer and Wise to get paid internationally.</p>
+            <div class="tags"><span>App Dev</span><span>Marketplace</span><span>Gumroad</span></div>
+          </div>
+          <a class="go" href="https://sengaa.gumroad.com" target="_blank" rel="noopener">View on Gumroad →</a>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <img class="work-thumb" src="portfolio-images/thumb-wanyoike-checkin.jpg" alt="Wanyoike Hostels visitor check-in dashboard, showing live visitor cards and stats">
+        <div class="work-body">
+          <div>
+            <div class="role">CUEA final-year project</div>
+            <h3>Wanyoike Hostels — Visitor Check-In System</h3>
+            <p class="case-line"><b>The problem:</b> the hostel's paper visitor log made it impossible to know who was on-site, who they were visiting, or who'd overstayed.</p>
+            <p class="case-line"><b>What I built:</b> a front-desk system that checks visitors in/out, links each visit to the resident they're seeing, flags overstays live, autofills returning visitors, and exports the log as CSV — no backend required.</p>
+            <p class="case-line"><b>What I'd improve next:</b> swap the localStorage model for a real backend, so two front desks can see the same live log.</p>
+            <div class="tags"><span>JavaScript</span><span>LocalStorage</span><span>UI/UX</span><span>GitHub Pages</span></div>
+          </div>
+          <a class="go" href="https://alvin64-source.github.io/wanyoike-hostels-checkin-system/" target="_blank" rel="noopener">Visit site →</a>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <img class="work-thumb" src="portfolio-images/thumb-election-system.jpg" alt="Student association election ballot, showing selected candidate cards highlighted in gold">
+        <div class="work-body">
+          <div>
+            <div class="role">Built & deployed solo</div>
+            <h3>Student Association Election System</h3>
+            <p class="case-line"><b>The problem:</b> committee elections run on WhatsApp polls or paper ballots — easy to dispute, hard to audit, no real results breakdown.</p>
+            <p class="case-line"><b>What I built:</b> a full voting flow — one-vote-per-ID ballot, live results with CSV export, and an admin panel to manage positions, candidates, and election settings without touching code.</p>
+            <div class="tags"><span>JavaScript</span><span>LocalStorage</span><span>Admin Panel</span><span>GitHub Pages</span></div>
+          </div>
+          <a class="go" href="https://alvin64-source.github.io/Election-system/" target="_blank" rel="noopener">Visit site →</a>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <img class="work-thumb" src="portfolio-images/thumb-frenzy-lounge.jpg" alt="Frenzy Lounge Republic homepage hero section">
+        <div class="work-body">
+          <div>
+            <div class="role">In progress</div>
+            <h3>Frenzy Lounge Republic</h3>
+            <p class="case-line"><b>The problem:</b> a Karen, Nairobi nightlife venue needed event listings, a DJ lineup, and a way to take table reservations without a booking platform subscription.</p>
+            <p class="case-line"><b>What I built:</b> event detail pages, a DJ lineup, a drinks menu, and a reservation flow that generates a ticket-style confirmation on submit.</p>
+            <div class="tags"><span>Web Dev</span><span>UI/UX</span><span>Booking Flow</span></div>
+          </div>
+          <span class="go pending">Deploying soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Send a signal.</h2>
+      <p>Open to remote IT support, web development, and freelance work right now — and always happy to talk about the path toward studying CS or cybersecurity abroad.</p>
+      <a class="mail-link" href="mailto:alvinasenga8@gmail.com">alvinasenga8@gmail.com</a>
+    </div>
+    <div class="social-list reveal">
+      <a href="https://www.tiktok.com/@a.sengaa" target="_blank" rel="noopener">TikTok <span class="handle">@a.sengaa</span></a>
+      <a href="https://www.instagram.com/s.e.n.g.a.a_" target="_blank" rel="noopener">Instagram <span class="handle">@s.e.n.g.a.a_</span></a>
+      <a href="mailto:alvinasenga8@gmail.com">Email <span class="handle">alvinasenga8@gmail.com</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>Alvin Asenga — Nairobi, Kenya</span>
+    <span>Built & maintained by hand</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el=> io.observe(el));
+
+  // ---- scroll progress bar ----
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  window.addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
+
+  // ---- cursor spotlight in hero ----
+  const heroEl = document.querySelector('header.hero');
+  const spotlight = document.getElementById('spotlight');
+  if(heroEl && spotlight && window.matchMedia('(hover: hover)').matches){
+    heroEl.addEventListener('mousemove', (e)=>{
+      const rect = heroEl.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      spotlight.style.setProperty('--mx', x + '%');
+      spotlight.style.setProperty('--my', y + '%');
+    });
+  }
+
+  // ---- rotating headline word ----
+  const rotateWords = ['build', 'secure', 'ship', 'fix'];
+  const rotateEl = document.getElementById('rotateWord');
+  if(rotateEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    let idx = 0;
+    setInterval(()=>{
+      rotateEl.classList.add('swap');
+      setTimeout(()=>{
+        idx = (idx + 1) % rotateWords.length;
+        rotateEl.textContent = rotateWords[idx];
+        rotateEl.classList.remove('swap');
+      }, 250);
+    }, 2200);
+  }
+
+  // ---- animated stat counters ----
+  const statNums = document.querySelectorAll('.stat-strip .num');
+  const statIo = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      const el = entry.target;
+      const accentSpan = el.querySelector('.accent');
+      const target = parseInt((accentSpan ? accentSpan.textContent : el.textContent).replace(/\D/g,''), 10) || 0;
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 20));
+      const tick = ()=>{
+        current = Math.min(target, current + step);
+        if(accentSpan){ accentSpan.textContent = current; } else { el.textContent = current; }
+        if(current < target) requestAnimationFrame(tick);
+      };
+      tick();
+      statIo.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  statNums.forEach(el => statIo.observe(el));
+
+  // ---- subtle 3D tilt on cards ----
+  function attachTilt(selector, maxTilt, lift){
+    document.querySelectorAll(selector).forEach(card=>{
+      card.addEventListener('mousemove', (e)=>{
+        if(!window.matchMedia('(hover: hover)').matches) return;
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${(-py * maxTilt).toFixed(2)}deg) rotateY(${(px * maxTilt).toFixed(2)}deg) translateY(${lift}px)`;
+      });
+      card.addEventListener('mouseleave', ()=>{
+        card.style.transform = '';
+      });
+    });
+  }
+  attachTilt('.work-card', 4, -3);
+  attachTilt('.skill-card', 5, -3);
+</script>
+
+</body>
+</html>
