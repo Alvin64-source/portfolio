@@ -2,281 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="Sengaa, also known as Alvin Asenga. IT support, web development, digital experiments and projects built in Nairobi, Kenya.">
-<title>SENGAA® — Developer, builder, problem-solver</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11120f">
+<meta name="description" content="Alvin Asenga, known as Sengaa. Web development, IT support, systems and digital projects built in Nairobi, Kenya.">
+<meta property="og:title" content="SENGAA® — I make ideas work.">
+<meta property="og:description" content="Web apps, IT systems and product experiments, built from Nairobi.">
+<title>SENGAA® — Alvin Asenga · Developer & problem-solver</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#080808;--panel:#111;--panel2:#171717;--ink:#f4f1ec;--muted:#aaa7a2;--quiet:#686660;--line:rgba(244,241,236,.15);--line2:rgba(244,241,236,.28);--lilac:#d9bcff;--lime:#c7ff69;--mono:"DM Mono",monospace;--sans:"Manrope",Arial,sans-serif;--pad:clamp(20px,5vw,76px);--max:1440px}
-*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E")}
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button:focus-visible,a:focus-visible{outline:2px solid var(--lilac);outline-offset:4px}
-::selection{background:var(--lilac);color:#080808}
-.wrap{width:min(100% - 2*var(--pad),var(--max));margin-inline:auto}
-.mono,.eyebrow,.tag,.meta,.index,.status,.button,.nav-label{font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em}
-.eyebrow{font-size:11px;color:var(--lime);display:flex;align-items:center;gap:10px}
-.eyebrow:before{content:"";width:22px;height:1px;background:currentColor;display:inline-block}
-.topbar{height:78px;position:absolute;z-index:30;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding-inline:var(--pad);border-bottom:1px solid rgba(255,255,255,.13)}
-.brand{font-weight:800;font-size:20px;letter-spacing:-.09em;line-height:1}
-.brand span{color:var(--lilac)}
-.nav{display:flex;align-items:center;gap:clamp(18px,3vw,44px);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#c7c4bf}
-.nav a{transition:color .2s}.nav a:hover{color:var(--lime)}
-.nav-contact{background:var(--lilac);color:#100b15!important;padding:12px 16px;border-radius:2px;font-weight:500}
-.menu-toggle{display:none;background:none;border:0;color:var(--ink);cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;align-items:center;gap:10px}
-.menu-toggle i,.menu-toggle i:after{display:block;width:20px;height:1px;background:currentColor;position:relative;transition:transform .2s}
-.menu-toggle i:after{content:"";position:absolute;left:0;top:6px}
-.menu-toggle[aria-expanded="true"] i{transform:translateY(3px) rotate(45deg)}
-.menu-toggle[aria-expanded="true"] i:after{transform:translateY(-6px) rotate(-90deg)}
-.hero{min-height: min(900px,100svh);min-height:max(700px,100svh);position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;padding:145px var(--pad) clamp(38px,5vw,76px);overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-backdrop{position:absolute;inset:0;z-index:-2;overflow:hidden;background:radial-gradient(ellipse at 75% 40%,rgba(217,188,255,.15),transparent 35%),radial-gradient(ellipse at 15% 75%,rgba(199,255,105,.08),transparent 35%),#080808}
-.hero-backdrop:before{content:"";position:absolute;width:min(74vw,1000px);aspect-ratio:1;right:-10%;top:7%;border:1px solid rgba(255,255,255,.12);border-radius:50%;box-shadow:0 0 0 7vw rgba(255,255,255,.012),0 0 0 14vw rgba(255,255,255,.012),0 0 0 21vw rgba(255,255,255,.012)}
-.hero-backdrop:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080808 0%,rgba(8,8,8,.65) 48%,rgba(8,8,8,.08) 100%),linear-gradient(0deg,#080808 0%,transparent 48%)}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.7fr);gap:40px;align-items:end;max-width:var(--max);width:100%;margin:0 auto}
-.hero-copy{max-width:800px}
-.hero .eyebrow{margin-bottom:24px}
-.hero h1{font-size:clamp(54px,10vw,150px);line-height:.86;letter-spacing:-.095em;font-weight:800;max-width:950px}
-.hero h1 .line{display:block;white-space:nowrap}
-.hero h1 .outline{color:transparent;-webkit-text-stroke:1px rgba(244,241,236,.85)}
-.hero h1 .accent{color:var(--lilac)}
-.hero-lede{font-size:clamp(15px,1.4vw,19px);line-height:1.65;color:#c3c0ba;max-width:510px;margin-top:28px}
-.hero-lede strong{color:var(--ink);font-weight:600}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.button{display:inline-flex;align-items:center;gap:16px;padding:14px 18px;border:1px solid var(--line2);font-size:10px;transition:transform .2s,background .2s,color .2s,border-color .2s}
-.button:hover{transform:translateY(-3px);border-color:var(--lilac)}
-.button.primary{background:var(--lilac);border-color:var(--lilac);color:#100b15}
-.button.primary:hover{background:#e8d9ff}
-.button .arrow{font-size:16px;line-height:0}
-.hero-side{align-self:end;justify-self:end;max-width:270px;margin-bottom:8px}
-.hero-side .side-number{font-size:clamp(46px,6vw,80px);font-weight:800;letter-spacing:-.09em;line-height:1;color:var(--lime)}
-.hero-side p{font-size:12px;color:var(--muted);max-width:230px;margin-top:12px}
-.hero-side .side-bottom{display:flex;justify-content:space-between;gap:18px;margin-top:36px;padding-top:12px;border-top:1px solid var(--line);font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.hero-mark{position:absolute;z-index:0;right:-2.5vw;top:18%;font-size:clamp(150px,32vw,490px);font-weight:800;letter-spacing:-.14em;line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.055);pointer-events:none;user-select:none}
-.marquee{overflow:hidden;border-bottom:1px solid var(--line);background:var(--lilac);color:#111;white-space:nowrap}
-.marquee-track{display:flex;width:max-content;animation:marquee 34s linear infinite;padding:13px 0;gap:30px;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.marquee-track span{display:inline-flex;align-items:center;gap:30px}.marquee-track b{font-size:16px;font-weight:400}
-@keyframes marquee{to{transform:translateX(-50%)}}
-section{padding:clamp(76px,10vw,145px) 0;position:relative}
-.section-head{display:grid;grid-template-columns:1fr 1.5fr;gap:30px;align-items:start;margin-bottom:58px}
-.section-head h2{font-size:clamp(36px,6vw,76px);line-height:.98;letter-spacing:-.075em;font-weight:700;max-width:850px}
-.section-head h2 em{font-style:normal;color:var(--lilac)}
-.section-intro{color:var(--muted);font-size:14px;max-width:470px;margin-top:22px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,8vw,120px);align-items:start}
-.about-text p{color:#b9b6b0;font-size:clamp(15px,1.5vw,18px);margin-bottom:18px;max-width:610px}
-.about-text p strong{color:var(--ink);font-weight:600}
-.about-aside{border-top:1px solid var(--line);padding-top:18px}
-.fact{display:grid;grid-template-columns:110px 1fr;gap:20px;padding:15px 0;border-bottom:1px solid var(--line);font-size:12px}
-.fact dt{font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--quiet)}
-.fact dd{color:#d5d2cc}
-.note-card{margin-top:24px;background:var(--panel);padding:24px;border:1px solid var(--line)}
-.note-card .mono{font-size:10px;color:var(--lime)}
-.note-card p{font-size:13px;color:var(--muted);margin-top:10px}
-.skills-section{background:#101010;border-block:1px solid var(--line)}
-.skill-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.skill-card{padding:clamp(20px,3vw,38px);min-height:265px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .25s}
-.skill-card:hover{background:#171717}
-.skill-card .num{font:11px var(--mono);color:var(--lime)}
-.skill-card h3{font-size:clamp(21px,2.3vw,29px);letter-spacing:-.055em;line-height:1.1;margin:30px 0 16px}
-.skill-card p{font-size:13px;color:var(--muted);max-width:310px}
-.skill-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
-.skill-tags span,.tag{font:9px var(--mono);letter-spacing:.04em;text-transform:uppercase;padding:7px 9px;border:1px solid var(--line);color:#c5c2bc}
-.work-head{align-items:end}
-.work-controls{display:flex;flex-wrap:wrap;gap:8px;margin:-22px 0 30px}
-.filter{background:transparent;border:1px solid var(--line);color:var(--muted);padding:10px 13px;cursor:pointer;font:9px var(--mono);text-transform:uppercase;letter-spacing:.08em;transition:all .2s}
-.filter:hover,.filter.active{background:var(--lilac);color:#100b15;border-color:var(--lilac)}
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.project{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);min-width:0;transition:transform .25s,border-color .25s,background .25s}
-.project:hover{transform:translateY(-4px);border-color:rgba(217,188,255,.65);background:#141414}
-.project[hidden]{display:none}
-.project-visual{position:relative;min-height:210px;aspect-ratio:1.7/1;overflow:hidden;border-bottom:1px solid var(--line);background:#181818;display:flex;align-items:center;justify-content:center}
-.project-visual:before,.project-visual:after{content:"";position:absolute;inset:0;pointer-events:none}
-.project-visual:before{background:radial-gradient(circle at 50% 50%,rgba(217,188,255,.18),transparent 54%)}
-.project-visual:after{background:linear-gradient(130deg,transparent 40%,rgba(199,255,105,.08))}
-.visual-type{font-size:clamp(34px,5vw,76px);font-weight:800;letter-spacing:-.1em;line-height:.88;text-align:center;position:relative;z-index:1;max-width:90%;text-transform:uppercase}
-.visual-type span{display:block;font:10px var(--mono);letter-spacing:.14em;color:var(--lime);margin-bottom:16px}
-.project:nth-child(3n + 2) .project-visual:before{background:radial-gradient(circle at 75% 25%,rgba(199,255,105,.17),transparent 52%)}
-.project:nth-child(3n) .project-visual:before{background:radial-gradient(circle at 25% 70%,rgba(217,188,255,.2),transparent 54%)}
-.visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent)}
-.project-content{padding:clamp(20px,3vw,32px);display:flex;flex-direction:column;flex:1}
-.project-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
-.project-index{font:10px var(--mono);color:var(--quiet);letter-spacing:.1em}
-.project-status{font:9px var(--mono);letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--line);padding:6px 8px;color:var(--muted)}
-.project-status.live{color:var(--lime);border-color:rgba(199,255,105,.35)}
-.project-status.concept{color:var(--lilac);border-color:rgba(217,188,255,.35)}
-.project h3{font-size:clamp(22px,2.5vw,31px);letter-spacing:-.06em;line-height:1.1;margin-bottom:12px}
-.project p{font-size:13px;color:var(--muted);margin-bottom:18px;max-width:570px}
-.project-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
-.project-tags span{font:9px var(--mono);color:#bcb9b2;border:1px solid var(--line);padding:6px 8px}
-.project-link{display:inline-flex;align-items:center;gap:12px;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;margin-top:22px;color:var(--ink);width:max-content;border-bottom:1px solid var(--line2);padding-bottom:7px;transition:color .2s,border-color .2s}
-.project-link:hover{color:var(--lime);border-color:var(--lime)}
-.experience{background:#101010;border-block:1px solid var(--line)}
-.timeline{border-top:1px solid var(--line)}
-.timeline-row{display:grid;grid-template-columns:180px 1fr 1fr;gap:24px;padding:27px 0;border-bottom:1px solid var(--line)}
-.timeline-date{font:10px var(--mono);color:var(--quiet);text-transform:uppercase;letter-spacing:.07em}
-.timeline-row h3{font-size:20px;letter-spacing:-.04em;margin-bottom:8px}
-.timeline-row p{font-size:13px;color:var(--muted);max-width:430px}
-.timeline-label{font:9px var(--mono);text-transform:uppercase;letter-spacing:.07em;color:var(--lime);margin-bottom:10px}
-.contact{padding-bottom:60px}
-.contact-panel{border:1px solid var(--line);padding:clamp(28px,7vw,90px);position:relative;overflow:hidden;background:radial-gradient(ellipse at 95% 5%,rgba(217,188,255,.16),transparent 45%),#111}
-.contact-panel:after{content:"S";position:absolute;right:0;bottom:-.5em;font-size:clamp(180px,35vw,470px);line-height:1;font-weight:800;letter-spacing:-.12em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.06);pointer-events:none}
-.contact-panel>*{position:relative;z-index:1}
-.contact-panel h2{font-size:clamp(44px,8vw,104px);line-height:.92;letter-spacing:-.09em;max-width:850px;margin:25px 0}
-.contact-panel p{font-size:14px;color:var(--muted);max-width:480px}
-.contact-links{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:30px}
-.contact-email{font-size:clamp(16px,2vw,22px);border-bottom:1px solid var(--line2);padding-bottom:7px;margin-right:14px}
-.contact-email:hover{color:var(--lime);border-color:var(--lime)}
-footer{padding:26px 0 34px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--quiet);font:9px var(--mono);letter-spacing:.07em;text-transform:uppercase}
-.footer-links{display:flex;gap:20px}
-.footer-links a:hover{color:var(--ink)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
-.reveal.in{opacity:1;transform:none}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:42px}.hero-side{justify-self:start;max-width:none;width:100%;display:grid;grid-template-columns:auto 1fr;column-gap:22px;align-items:center}.hero-side p{margin:0}.hero-side .side-bottom{grid-column:1/-1;margin-top:20px}.hero-mark{top:24%;right:-7vw}.section-head{grid-template-columns:1fr;gap:18px;margin-bottom:40px}.section-intro{margin-top:15px}.timeline-row{grid-template-columns:130px 1fr}.timeline-row>div:last-child{grid-column:2}.skill-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){:root{--pad:20px}.topbar{height:66px}.menu-toggle{display:flex}.nav{display:none;position:absolute;top:66px;left:0;right:0;background:#080808;border-bottom:1px solid var(--line);padding:18px var(--pad) 24px;align-items:stretch;gap:0;flex-direction:column}.nav.open{display:flex}.nav a{padding:15px 0;border-bottom:1px solid var(--line)}.nav .nav-contact{margin-top:12px;padding:13px 15px;text-align:center;border-bottom:0}.hero{min-height:850px;min-height:100svh;padding-top:120px}.hero h1{font-size:clamp(52px,16vw,100px)}.hero h1 .line{white-space:normal}.hero-lede{font-size:14px;max-width:440px}.hero-side{grid-template-columns:auto 1fr}.hero-side .side-number{font-size:48px}.hero-side .side-bottom{font-size:9px}.hero-mark{font-size:65vw;top:24%;right:-12vw}.skill-grid,.project-grid{grid-template-columns:1fr}.skill-card{min-height:0}.skill-card h3{margin-top:20px}.project-visual{min-height:185px}.timeline-row{grid-template-columns:1fr;gap:10px;padding:23px 0}.timeline-row>div:last-child{grid-column:auto}.fact{grid-template-columns:95px 1fr}.contact-panel h2{font-size:clamp(45px,14vw,80px)}.contact-links{align-items:flex-start;flex-direction:column}.contact-email{margin:0 0 8px}.footer-links{gap:13px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+:root{color-scheme:dark;--bg:#171815;--fg:#f2f2e9;--card:#22231f;--muted:#a2a39a;--border:rgba(242,242,233,.17);--acid:#b7ff35;--hot:#ff5d43;--display:"Anton",Impact,sans-serif;--mono:"JetBrains Mono",monospace;--sans:"Space Grotesk",Arial,sans-serif;--max:1280px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:78px}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}::selection{background:var(--acid);color:var(--bg)}.wrap{width:min(calc(100% - 40px),var(--max));margin-inline:auto}.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.045em;font-size:11px}.acid{color:var(--acid)}.muted{color:var(--muted)}.outline{color:transparent;-webkit-text-stroke:1.5px var(--fg)}.grid-lines{background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px}.grain{background-image:radial-gradient(rgba(242,242,233,.09) 1px,transparent 1px);background-size:4px 4px}.matrix{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;opacity:.12;mix-blend-mode:screen}.topbar{position:fixed;z-index:50;top:0;left:0;right:0;background:rgba(23,24,21,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}.nav{width:min(calc(100% - 40px),var(--max));margin:auto;min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-family:var(--display);font-size:28px;letter-spacing:.025em}.brand sup{color:var(--acid);font:inherit}.nav-links{display:flex;align-items:center;gap:clamp(14px,2.7vw,36px)}.nav-links a,.hire{font:11px var(--mono);text-transform:uppercase;letter-spacing:.035em;transition:color .2s,background .2s}.nav-links a:hover{color:var(--acid)}.nav-links a span{color:var(--acid);margin-right:7px}.hire{border:1px solid var(--acid);padding:11px 14px;color:var(--acid);white-space:nowrap}.hire:hover{background:var(--acid);color:var(--bg)}.menu{display:none;background:none;border:1px solid var(--border);padding:9px 12px;font:11px var(--mono);text-transform:uppercase}.hero{position:relative;padding:118px 0 0;border-bottom:1px solid var(--border);overflow:hidden}.hero:before{content:"";position:absolute;inset:70px 0 0;pointer-events:none;background:linear-gradient(90deg,transparent 49.9%,var(--border) 50%,transparent 50.1%);opacity:.3}.hero .wrap{position:relative;z-index:3;padding-bottom:40px}.hero-top{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font:11px var(--mono);text-transform:uppercase}.availability{display:flex;align-items:center;gap:9px}.blink{height:8px;width:8px;background:var(--acid);display:inline-block;animation:blink 1s steps(1) infinite}.hero h1{font:clamp(110px,19.3vw,250px)/.79 var(--display);letter-spacing:-.025em;text-transform:uppercase;margin:55px 0 42px;position:relative;z-index:1}.hero h1 .second{display:flex;align-items:baseline;gap:.12em;flex-wrap:wrap}.hero-bottom{display:grid;grid-template-columns:6fr 2.5fr 3fr;gap:28px;border-top:1px solid var(--border);padding-top:28px;align-items:start}.hero-intro{font-size:clamp(19px,2.1vw,29px);line-height:1.2;max-width:590px;margin:0}.hero-intro strong{font-weight:600;color:var(--acid)}.hero-stats{font:11px/2 var(--mono);text-transform:uppercase;color:var(--muted)}.hero-stats b{color:var(--fg);font-weight:400}.hero-actions{display:flex;flex-direction:column;gap:10px}.btn{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 18px;border:1px solid var(--fg);font:12px var(--mono);text-transform:uppercase;transition:transform .2s,background .2s,color .2s,border-color .2s}.btn.primary{background:var(--acid);border-color:var(--acid);color:var(--bg)}.btn:hover{transform:translateX(4px);border-color:var(--acid);color:var(--acid)}.btn.primary:hover{background:var(--fg);border-color:var(--fg);color:var(--bg)}.marquee{overflow:hidden;border-bottom:1px solid var(--border);background:var(--acid);color:var(--bg);padding:12px 0}.marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite;font:clamp(24px,3vw,42px)/1 var(--display);text-transform:uppercase;white-space:nowrap}.marquee-track span{padding:0 18px}.marquee-track b{font:24px var(--sans);color:var(--hot);margin-left:18px}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes blink{50%{opacity:0}}@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}.rise{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}.delay1{animation-delay:.12s}.delay2{animation-delay:.24s}.section{padding:clamp(78px,10vw,140px) 0}.about{display:grid;grid-template-columns:4fr 8fr;gap:30px}.section-label{font:11px var(--mono);text-transform:uppercase;color:var(--acid)}h2,h3,p{margin-top:0}.section-title{font:clamp(44px,6.2vw,82px)/.92 var(--display);text-transform:uppercase;letter-spacing:-.01em;margin:0}.about-copy{font-size:clamp(17px,1.7vw,22px);line-height:1.55;color:var(--muted);display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:32px}.about-copy p{margin:0}.about-copy strong{color:var(--fg);font-weight:500}.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:42px;border-left:1px solid var(--border);border-top:1px solid var(--border)}.fact{border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px}.fact dt{font:10px var(--mono);text-transform:uppercase;color:var(--muted)}.fact dd{margin:10px 0 0;font:15px var(--mono);text-transform:uppercase}.skills-section{background:var(--card);border-block:1px solid var(--border)}.skills-head{display:flex;align-items:end;justify-content:space-between;gap:28px}.skills-head p{max-width:350px;font:11px/1.7 var(--mono);text-transform:uppercase;color:var(--muted);margin:0}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--border);border-top:1px solid var(--border);margin-top:52px}.skill{padding:clamp(22px,3vw,38px);border-right:1px solid var(--border);border-bottom:1px solid var(--border);min-height:255px;transition:background .2s,color .2s}.skill:hover{background:var(--acid);color:var(--bg)}.skill .num{font:11px var(--mono);opacity:.6}.skill h3{font:clamp(25px,3vw,37px)/.98 var(--display);text-transform:uppercase;margin:32px 0 14px}.skill p{font-size:15px;line-height:1.55;opacity:.78;margin-bottom:22px}.skill .stack{font:10px/1.7 var(--mono);text-transform:uppercase;opacity:.7}.work-head{display:flex;align-items:end;justify-content:space-between;gap:28px}.filters{display:flex;flex-wrap:wrap;gap:0}.filter{border:1px solid var(--border);background:transparent;padding:11px 15px;margin-left:-1px;font:10px var(--mono);text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}.filter:hover,.filter.active{background:var(--acid);color:var(--bg);border-color:var(--acid);position:relative;z-index:1}.project-list{margin:54px 0 0;padding:0;list-style:none;border-top:1px solid var(--border)}.project{border-bottom:1px solid var(--border)}.project[hidden]{display:none}.project a{display:grid;grid-template-columns:1fr 5fr 4fr 2fr;align-items:center;gap:20px;padding:30px 16px;transition:background .2s}.project a:hover{background:var(--card)}.project-num{font:11px var(--mono);color:var(--muted)}.project-title{font:clamp(27px,4vw,54px)/.95 var(--display);text-transform:uppercase;transition:color .2s,transform .2s}.project a:hover .project-title{color:var(--acid);transform:translateX(7px)}.project-tag{display:inline-block;font:10px var(--mono);text-transform:uppercase;color:var(--muted);margin-top:10px}.project-desc{font-size:14px;line-height:1.5;color:var(--muted);margin:0}.project-stack{display:block;margin-top:8px;font:10px/1.6 var(--mono);text-transform:uppercase;color:var(--fg);opacity:.62}.project-right{display:flex;justify-content:flex-end;align-items:center;gap:14px}.status{font:9px var(--mono);text-transform:uppercase;white-space:nowrap;border:1px solid var(--border);padding:7px 8px;color:var(--muted)}.status.live{border-color:var(--acid);color:var(--acid)}.project-arrow{font-size:25px;transition:transform .2s,color .2s}.project a:hover .project-arrow{transform:rotate(45deg);color:var(--acid)}.log-section{background:var(--card);border-block:1px solid var(--border)}.log-grid{display:grid;grid-template-columns:4fr 8fr;gap:30px}.log-title{font:clamp(44px,6vw,76px)/.92 var(--display);text-transform:uppercase;margin-top:18px}.log-entry{display:grid;grid-template-columns:1fr 3fr;gap:24px;border-bottom:1px solid var(--border);padding:24px 0}.log-entry:first-child{border-top:1px solid var(--border)}.log-date{font:11px var(--mono);color:var(--acid)}.log-entry h3{font:22px var(--sans);margin:0 0 7px}.log-entry p{font-size:14px;line-height:1.55;color:var(--muted);margin:0}.contact{padding:clamp(90px,13vw,170px) 0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px}.contact-title{font:clamp(62px,12.5vw,160px)/.83 var(--display);text-transform:uppercase;margin:24px 0 42px;letter-spacing:-.02em}.contact-email{display:inline-block;font:clamp(25px,4.5vw,56px)/1.2 var(--display);border-bottom:2px solid var(--acid);padding-bottom:8px;overflow-wrap:anywhere;transition:color .2s}.contact-email:hover{color:var(--acid)}.contact-note{font-size:16px;color:var(--muted);max-width:520px;margin:24px 0 0;line-height:1.6}.footer{border-top:1px solid var(--border)}.footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;padding:23px 0;font:10px var(--mono);text-transform:uppercase;color:var(--muted)}.footer-links{display:flex;gap:22px}.footer a:hover{color:var(--acid)}.fade{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.fade.visible{opacity:1;transform:none}
+@media(max-width:900px){.nav-links{gap:14px}.nav-links a{font-size:9px}.hero-bottom{grid-template-columns:1.3fr 1fr}.hero-intro{grid-column:1/-1;max-width:750px}.hero h1{font-size:22vw}.about{grid-template-columns:1fr;gap:22px}.skills-grid{grid-template-columns:repeat(2,1fr)}.project a{grid-template-columns:55px 1.2fr 1fr}.project-right{grid-column:2/-1;justify-content:space-between}.project-desc{grid-column:3;grid-row:1/3}.log-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:620px){.wrap,.nav{width:calc(100% - 32px)}.nav{min-height:64px}.menu{display:block}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);padding:12px 16px 22px;border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:15px 0;border-bottom:1px solid var(--border);font-size:11px}.hire{margin-left:auto}.hero{padding-top:105px}.hero .wrap{padding-bottom:28px}.hero-top{font-size:9px}.hero h1{font-size:23vw;margin:54px 0 35px}.hero-bottom{grid-template-columns:1fr 1fr;gap:20px}.hero-intro{font-size:21px}.hero-stats{font-size:9px}.hero-actions{gap:8px}.btn{font-size:10px;padding:13px 12px}.section{padding:80px 0}.section-title{font-size:clamp(48px,13vw,72px)}.about-copy{grid-template-columns:1fr;font-size:17px;gap:18px}.facts{grid-template-columns:repeat(2,1fr);margin-top:30px}.fact{padding:15px}.fact dd{font-size:12px}.skills-head,.work-head{align-items:flex-start;flex-direction:column}.skills-head p{max-width:100%}.skills-grid{grid-template-columns:1fr;margin-top:34px}.skill{min-height:0;padding:24px}.skill h3{margin-top:24px}.project-list{margin-top:34px}.project a{grid-template-columns:42px 1fr auto;gap:12px;padding:23px 4px}.project-title{font-size:clamp(28px,8vw,42px)}.project-desc{grid-column:2/-1;grid-row:auto;font-size:13px}.project-right{grid-column:2/-1;grid-row:auto;justify-content:space-between}.project-arrow{margin-left:auto}.log-grid{gap:24px}.log-entry{grid-template-columns:1fr;gap:8px;padding:20px 0}.log-title{font-size:60px}.contact-title{font-size:clamp(59px,15vw,100px)}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{gap:18px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.fade{opacity:1;transform:none}.matrix{display:none}}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#home" aria-label="Sengaa home">SENGAA<span>®</span></a>
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav"><i aria-hidden="true"></i><span id="menuLabel">Menu</span></button>
-  <nav class="nav" id="siteNav" aria-label="Main navigation">
-    <a href="#about">About</a><a href="#skills">Capabilities</a><a href="#work">Selected work</a><a href="#experience">Experience</a><a class="nav-contact" href="#contact">Let's talk ↗</a>
-  </nav>
-</header>
+<canvas class="matrix" id="matrix" aria-hidden="true"></canvas>
+<header class="topbar"><nav class="nav" aria-label="Main navigation"><a class="brand" href="#top">SENGAA<sup>®</sup></a><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu ☰</button><div class="nav-links" id="navLinks"><a href="#about"><span>01</span>About</a><a href="#stack"><span>02</span>Stack</a><a href="#work"><span>03</span>Work</a><a href="#log"><span>04</span>Log</a></div><a class="hire" href="mailto:sengaa64@gmail.com">Hire me ↗</a></nav></header>
 <main>
-<section class="hero" id="home">
-  <div class="hero-backdrop" aria-hidden="true"></div><div class="hero-mark" aria-hidden="true">S.</div>
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow">Independent builder · Nairobi, Kenya</div>
-      <h1><span class="line">I make</span><span class="line outline">ideas</span><span class="line">work<span class="accent">.</span></span></h1>
-      <p class="hero-lede">I'm <strong>Alvin Asenga, known as Sengaa.</strong> I build useful digital things, untangle tech problems, and turn rough ideas into working projects. Somewhere between IT support, web development, and a browser with 37 tabs open.</p>
-      <div class="hero-actions"><a class="button primary" href="#work">Explore my work <span class="arrow">↘</span></a><a class="button" href="mailto:sengaa64@gmail.com">Get in touch <span class="arrow">↗</span></a></div>
-    </div>
-    <aside class="hero-side">
-      <div class="side-number">01—∞</div><p>Curious by default. Building in public. Learning by shipping, one project at a time.</p>
-      <div class="side-bottom"><span>IT · Web · Product</span><span>Available for opportunities ↗</span></div>
-    </aside>
-  </div>
-</section>
-<div class="marquee" aria-label="Skills and interests"><div class="marquee-track"><span>Web development <b>✳</b> IT support <b>✳</b> UI experiments <b>✳</b> JavaScript <b>✳</b> Product thinking <b>✳</b> Nairobi, Kenya <b>✳</b></span><span aria-hidden="true">Web development <b>✳</b> IT support <b>✳</b> UI experiments <b>✳</b> JavaScript <b>✳</b> Product thinking <b>✳</b> Nairobi, Kenya <b>✳</b></span></div></div>
-<section id="about">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">01 / The person behind the pixels</div><div><h2>Technical enough to build it. <em>Curious enough to make it better.</em></h2><p class="section-intro">I like work where practical problem-solving meets creative thinking. I don't just want to know how something works. I want to make it useful.</p></div></div>
-    <div class="about-grid">
-      <div class="about-text reveal"><p>I'm an IT graduate-in-progress from the <strong>Catholic University of Eastern Africa (CUEA)</strong>, based in Nairobi, Kenya. My foundation is in IT support and systems, with hands-on practice building responsive websites and browser-based apps.</p><p>My projects range from a hostel visitor check-in system and an election platform to a website for a community organisation, a car-rental concept, and small AI-powered product experiments. Some are shipped, some are still evolving, and I label them honestly.</p><p>I completed an industrial attachment at <strong>Tourism Fund</strong>, rotating through ICT and several business departments. It gave me a wider view of how technology supports real teams, operations, and services.</p></div>
-      <div class="about-aside reveal"><dl>
-        <div class="fact"><dt>Based in</dt><dd>Nairobi, Kenya</dd></div>
-        <div class="fact"><dt>Education</dt><dd>Diploma in Information Technology · CUEA</dd></div>
-        <div class="fact"><dt>Focus</dt><dd>Web apps, IT support, UI/UX, practical automation</dd></div>
-        <div class="fact"><dt>Languages</dt><dd>JavaScript, HTML, CSS, Java, C++</dd></div>
-        <div class="fact"><dt>Working style</dt><dd>Hands-on, curious, detail-minded</dd></div>
-      </dl><div class="note-card"><span class="mono">CURRENT MODE / BUILD</span><p>Growing from static websites and browser storage into full-stack apps, APIs, databases, and AI-assisted workflows.</p></div></div>
-    </div>
-  </div>
-</section>
-<section class="skills-section" id="skills">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">02 / What I bring</div><div><h2>My toolkit is a <em>work in progress.</em></h2><p class="section-intro">A practical mix of foundations, projects, and skills I'm actively sharpening. No fake expert badges, just things I can work with and keep improving.</p></div></div>
-    <div class="skill-grid">
-      <article class="skill-card reveal"><span class="num">A / 01</span><h3>Web & frontend</h3><p>Building clean, responsive interfaces and small interactive experiences with a focus on usability.</p><div class="skill-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span><span>GitHub Pages</span></div></article>
-      <article class="skill-card reveal"><span class="num">A / 02</span><h3>Programming</h3><p>Core programming foundations and the discipline of breaking a problem into smaller pieces.</p><div class="skill-tags"><span>Java</span><span>C++</span><span>DOM</span><span>LocalStorage</span></div></article>
-      <article class="skill-card reveal"><span class="num">A / 03</span><h3>IT support & systems</h3><p>Technical troubleshooting, end-user support, basic network administration, and a service-first mindset.</p><div class="skill-tags"><span>IT Support</span><span>Troubleshooting</span><span>Networking</span><span>Systems</span></div></article>
-      <article class="skill-card reveal"><span class="num">A / 04</span><h3>Security & data</h3><p>Foundational understanding of cybersecurity, databases, data handling, and responsible system design.</p><div class="skill-tags"><span>Cybersecurity basics</span><span>Databases</span><span>Data handling</span><span>Privacy awareness</span></div></article>
-      <article class="skill-card reveal"><span class="num">A / 05</span><h3>AI & product experiments</h3><p>Exploring AI-assisted workflows and the steps between a useful idea, an interface, and a real app.</p><div class="skill-tags"><span>Node.js learning</span><span>AI workflows</span><span>API concepts</span><span>Prototyping</span></div></article>
-      <article class="skill-card reveal"><span class="num">A / 06</span><h3>Communication & delivery</h3><p>Explaining ideas clearly, documenting work, researching, writing, and keeping a project moving.</p><div class="skill-tags"><span>Client communication</span><span>Research</span><span>Technical writing</span><span>Documentation</span></div></article>
-    </div>
-  </div>
-</section>
-<section id="work">
-  <div class="wrap">
-    <div class="section-head work-head reveal"><div class="eyebrow">03 / Selected work</div><div><h2>Built with intent. <em>Still building.</em></h2><p class="section-intro">A collection of shipped projects, prototypes, and concepts. Filter the grid to find a particular flavour of work.</p></div></div>
-    <div class="work-controls" role="group" aria-label="Filter projects">
-      <button class="filter active" data-filter="all" aria-pressed="true">All projects</button><button class="filter" data-filter="web" aria-pressed="false">Web & apps</button><button class="filter" data-filter="community" aria-pressed="false">Community</button><button class="filter" data-filter="concept" aria-pressed="false">Concepts & experiments</button>
-    </div>
-    <div class="project-grid" id="projectGrid">
-      <article class="project reveal" data-category="community web">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>01 / Community</span>VICTORS<br>RESCUE</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 001</span><span class="project-status live">Website live</span></div><h3>Victors Rescue CBO</h3><p>A website for a community organisation in Isiolo, helping it explain its mission and build a clearer online presence for supporters and potential donors.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>Responsive design</span><span>Community</span></div><a class="project-link" href="https://alvin64-source.github.io/Victors-Rescue-CBO/" target="_blank" rel="noopener noreferrer">Visit live website ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>02 / Campus systems</span>WANYOIKE<br>CHECK-IN</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 002</span><span class="project-status live">Prototype live</span></div><h3>Wanyoike Hostels Visitor System</h3><p>A front-desk visitor log for check-ins, check-outs, visitor details, search, and records. Built as a browser-based prototype using localStorage, with a real shared backend as a future improvement.</p><div class="project-tags"><span>JavaScript</span><span>HTML/CSS</span><span>LocalStorage</span><span>UI/UX</span></div><a class="project-link" href="https://alvin64-source.github.io/wanyoike-hostels-checkin-system/" target="_blank" rel="noopener noreferrer">Open project ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>03 / Civic tech</span>YOUR<br>VOTE.</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 003</span><span class="project-status live">Prototype live</span></div><h3>Student Association Election System</h3><p>A digital voting flow concept with candidate selection, election management, results, and exportable records. A prototype, not a production-secure election platform.</p><div class="project-tags"><span>JavaScript</span><span>LocalStorage</span><span>Admin UI</span><span>CSV export</span></div><a class="project-link" href="https://alvin64-source.github.io/Election-system/" target="_blank" rel="noopener noreferrer">Open project ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>04 / Hospitality</span>FRENZY<br>LOUNGE</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 004</span><span class="project-status">In progress</span></div><h3>Frenzy Lounge Republic</h3><p>A nightlife venue website concept with event listings, DJ lineup, drinks menu, and a reservation flow that produces a ticket-style confirmation.</p><div class="project-tags"><span>Web design</span><span>UI/UX</span><span>Booking flow</span></div><a class="project-link" href="https://github.com/Alvin64-source/Frenzy-lounge-republic" target="_blank" rel="noopener noreferrer">View repository ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web concept">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>05 / Mobility</span>URBAN<br>WHEELS</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 005</span><span class="project-status concept">Concept / prototype</span></div><h3>Urban Wheels Nairobi</h3><p>A car-rental interface experiment with vehicle discovery, rental details, and a payment-flow concept including an M-Pesa direction. Frontend prototype, not a live booking/payment service.</p><div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>LocalStorage</span><span>Mobility</span></div><a class="project-link" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">Explore my GitHub ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web concept">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>06 / AI tools</span>INTAKE<br>→ PROPOSAL</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 006</span><span class="project-status concept">In development</span></div><h3>AI Client Intake + Proposal Generator</h3><p>A small Node.js app experiment that turns a client's project details, budget, timeline, and brief into a structured proposal. The next step is connecting a language model and refining the workflow.</p><div class="project-tags"><span>Node.js</span><span>Forms</span><span>AI integration</span><span>Productivity</span></div><a class="project-link" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">Explore my GitHub ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="community concept">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>07 / Storytelling</span>BANA<br>NAIROBI</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 007</span><span class="project-status concept">Creative concept</span></div><h3>Bana Nairobi</h3><p>A Nairobi-set comedy concept about relationships, school life, and everyday city stories, with a recurring 2D cartoon protagonist and a distinctly local voice.</p><div class="project-tags"><span>Creative direction</span><span>Character concept</span><span>Storytelling</span></div><a class="project-link" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">More projects ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="community concept">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>08 / Football</span>GUNNERS<br>AFTERMATH</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 008</span><span class="project-status concept">Concept</span></div><h3>Gunners Aftermath</h3><p>A football-focused content idea for post-match reactions, tactical observations, and conversations around Arsenal. Built around the supporter perspective and the details behind the result.</p><div class="project-tags"><span>Football</span><span>Content concept</span><span>Arsenal</span></div><a class="project-link" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">More projects ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web concept">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>09 / Commerce</span>PRO<br>CONNECT</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 009</span><span class="project-status">Past project</span></div><h3>ProConnect</h3><p>A B2B service marketplace concept built to help small businesses find and connect with service providers. Previously listed for sale; included here as an early product-building experience.</p><div class="project-tags"><span>Marketplace</span><span>App concept</span><span>Product thinking</span></div><a class="project-link" href="https://sengaa.gumroad.com" target="_blank" rel="noopener noreferrer">Visit Gumroad ↗</a></div>
-      </article>
-      <article class="project reveal" data-category="web concept">
-        <div class="project-visual"><div class="visual-grid"></div><div class="visual-type"><span>10 / Personal brand</span>SENGAA<br>PORTFOLIO</div></div>
-        <div class="project-content"><div class="project-top"><span class="project-index">PROJECT / 010</span><span class="project-status live">You're here</span></div><h3>This portfolio</h3><p>A personal space for my projects, skills, and experiments. The visual direction borrows from high-contrast editorial landing pages, oversized type, sharp layouts, and a little motion.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Interaction design</span></div><a class="project-link" href="#home">Back to top ↑</a></div>
-      </article>
-    </div>
-  </div>
-</section>
-<section class="experience" id="experience">
-  <div class="wrap">
-    <div class="section-head reveal"><div class="eyebrow">04 / Experience & learning</div><div><h2>Learning in the real world, <em>not just in tabs.</em></h2><p class="section-intro">A quick look at the experience and education that shaped how I approach technology.</p></div></div>
-    <div class="timeline">
-      <article class="timeline-row reveal"><div class="timeline-date">Jan – Apr 2025</div><div><div class="timeline-label">Industrial attachment</div><h3>Tourism Fund</h3><p>Completed an industrial attachment with rotations including ICT, HR/Admin, Internal Audit, Levy Services, Strategy & Planning, Finance, Supply Chain, and other teams.</p></div><div><div class="timeline-label">What it taught me</div><p>How IT fits into day-to-day operations, how departments depend on reliable systems, and how to work with people beyond the technical team.</p></div></article>
-      <article class="timeline-row reveal"><div class="timeline-date">2024 – 2026</div><div><div class="timeline-label">Education</div><h3>Catholic University of Eastern Africa</h3><p>Diploma in Information Technology. Final academic work completed; final results and clearance status should be confirmed on request.</p></div><div><div class="timeline-label">Core foundations</div><p>Programming, web technologies, databases, IT support, and systems fundamentals, supplemented by self-directed projects.</p></div></article>
-      <article class="timeline-row reveal"><div class="timeline-date">Ongoing</div><div><div class="timeline-label">Independent practice</div><h3>Build, test, repeat</h3><p>Personal projects, GitHub workflows, frontend experiments, and learning to connect interfaces to real services.</p></div><div><div class="timeline-label">Current direction</div><p>Deeper full-stack development, APIs, databases, AI-powered apps, and more robust deployment practices.</p></div></article>
-    </div>
-  </div>
-</section>
-<section class="contact" id="contact">
-  <div class="wrap"><div class="contact-panel reveal"><div class="eyebrow">05 / Your turn</div><h2>Got a problem worth solving?</h2><p>I'm open to IT support opportunities, junior web development work, freelance projects, collaborations, and conversations with people building useful things.</p><div class="contact-links"><a class="contact-email" href="mailto:sengaa64@gmail.com">sengaa64@gmail.com ↗</a><a class="button primary" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">GitHub profile <span class="arrow">↗</span></a><a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Connect professionally <span class="arrow">↗</span></a></div></div></div>
-</section>
+<section class="hero grid-lines" id="top"><div class="grain" style="position:absolute;inset:0;pointer-events:none;opacity:.2"></div><div class="wrap"><div class="hero-top rise"><span class="availability"><i class="blink"></i> Available for work · 2026</span><span>Nairobi, KE · 1.29°S 36.82°E</span></div><h1 class="rise delay1">I make<br><span class="second"><span class="outline">ideas</span><span class="acid">work.</span></span></h1><div class="hero-bottom rise delay2"><p class="hero-intro">Alvin Asenga, <strong>Sengaa</strong>. Developer, systems fixer and builder. I take rough ideas and ship them as working software.</p><div class="hero-stats"><div><b>10+</b> projects shipped / prototyped</div><div><b>3</b> live web apps</div><div><b>∞</b> tabs open</div></div><div class="hero-actions"><a class="btn primary" href="#work">See the work <span>↘</span></a><a class="btn" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a></div></div></div></section>
+<div class="marquee"><div class="marquee-track" aria-hidden="true"><span>JavaScript <b>✳</b></span><span>HTML / CSS <b>✳</b></span><span>Java <b>✳</b></span><span>C++ <b>✳</b></span><span>IT Support <b>✳</b></span><span>Networking <b>✳</b></span><span>UI / UX <b>✳</b></span><span>AI workflows <b>✳</b></span><span>Databases <b>✳</b></span><span>JavaScript <b>✳</b></span><span>HTML / CSS <b>✳</b></span><span>Java <b>✳</b></span><span>C++ <b>✳</b></span><span>IT Support <b>✳</b></span><span>Networking <b>✳</b></span><span>UI / UX <b>✳</b></span><span>AI workflows <b>✳</b></span><span>Databases <b>✳</b></span></div></div>
+<section class="section wrap about fade" id="about"><div class="section-label">[01] / The operator</div><div><h2 class="section-title">Technical enough to build it.<br><span class="muted">Stubborn enough to finish it.</span></h2><div class="about-copy"><p>IT at the <strong>Catholic University of Eastern Africa</strong>. Grounded in support and systems, sharpened by building real things for real people.</p><p>Industrial attachment at <strong>Tourism Fund</strong>, rotating through ICT and business teams, seeing how technology keeps an organisation moving.</p><p>From visitor check-in tools to community websites and product experiments, I like taking a real-world problem and making the next step easier.</p><p>I'm growing from frontend prototypes into full-stack apps, APIs, databases and AI-powered workflows. I label experiments honestly and keep learning by shipping.</p></div><dl class="facts"><div class="fact"><dt>Base</dt><dd>Nairobi</dd></div><div class="fact"><dt>Education</dt><dd>Dip. IT · CUEA</dd></div><div class="fact"><dt>Languages</dt><dd>JS · Java · C++</dd></div><div class="fact"><dt>Mode</dt><dd>Full-stack + AI</dd></div></dl></div></section>
+<section class="skills-section section" id="stack"><div class="wrap"><div class="skills-head fade"><h2 class="section-title">The <span class="acid">kit</span></h2><p>No fake expert badges. Just tools I use, skills I've practised, and things I keep sharpening.</p></div><div class="skills-grid">
+<article class="skill fade"><div class="num">A / 01</div><h3>Web & frontend</h3><p>Fast, responsive interfaces that people can understand on first look.</p><div class="stack">HTML · CSS · JavaScript · GitHub Pages</div></article>
+<article class="skill fade"><div class="num">A / 02</div><h3>Programming</h3><p>Breaking big messy problems into small, solvable pieces.</p><div class="stack">Java · C++ · DOM · LocalStorage</div></article>
+<article class="skill fade"><div class="num">A / 03</div><h3>IT & systems</h3><p>Troubleshooting, networking, and support that keeps a team running.</p><div class="stack">IT support · Networking · Systems</div></article>
+<article class="skill fade"><div class="num">A / 04</div><h3>Security & data</h3><p>Handling data responsibly and designing with privacy in mind.</p><div class="stack">Cybersecurity fundamentals · Databases · Privacy</div></article>
+<article class="skill fade"><div class="num">A / 05</div><h3>AI & product</h3><p>Taking an idea from napkin to interface to a working app.</p><div class="stack">Node.js · APIs · AI workflows · Prototyping</div></article>
+<article class="skill fade"><div class="num">A / 06</div><h3>Delivery</h3><p>Clear communication, documentation and research so projects move forward.</p><div class="stack">Writing · Documentation · Client communication</div></article>
+</div></div></section>
+<section class="section wrap" id="work"><div class="work-head fade"><h2 class="section-title">Selected<br><span class="outline">work</span></h2><div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All</button><button class="filter" data-filter="web" aria-pressed="false">Shipped</button><button class="filter" data-filter="lab" aria-pressed="false">Lab</button></div></div><ul class="project-list" id="projectList">
+<li class="project fade" data-cat="web"><a href="https://alvin64-source.github.io/Victors-Rescue-CBO/" target="_blank" rel="noopener noreferrer"><span class="project-num">/001</span><div><h3 class="project-title">Victors Rescue CBO</h3><span class="project-tag">Community</span></div><p class="project-desc">Online home for a community organisation in Isiolo, with its mission, story and a clearer path for supporters.<span class="project-stack">HTML · CSS · Responsive</span></p><div class="project-right"><span class="status live">LIVE</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="web"><a href="https://alvin64-source.github.io/wanyoike-hostels-checkin-system/" target="_blank" rel="noopener noreferrer"><span class="project-num">/002</span><div><h3 class="project-title">Wanyoike Hostels Check-in</h3><span class="project-tag">Campus systems</span></div><p class="project-desc">A front-desk visitor log for check-ins, check-outs, searching and records. Browser-based prototype using localStorage.<span class="project-stack">JavaScript · LocalStorage · UI/UX</span></p><div class="project-right"><span class="status live">LIVE PROTOTYPE</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="web"><a href="https://alvin64-source.github.io/Election-system/" target="_blank" rel="noopener noreferrer"><span class="project-num">/003</span><div><h3 class="project-title">Student Election System</h3><span class="project-tag">Civic tech</span></div><p class="project-desc">A digital voting flow concept with candidate selection, election management, results and exportable records. Not a production-secure election platform.<span class="project-stack">JavaScript · Admin UI · CSV</span></p><div class="project-right"><span class="status live">LIVE PROTOTYPE</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="web"><a href="https://github.com/Alvin64-source/Frenzy-lounge-republic" target="_blank" rel="noopener noreferrer"><span class="project-num">/004</span><div><h3 class="project-title">Frenzy Lounge Republic</h3><span class="project-tag">Hospitality</span></div><p class="project-desc">Nightlife venue website concept with events, DJ lineup, menu and a reservation flow that creates a ticket-style confirmation.<span class="project-stack">Web design · UI/UX · Booking flow</span></p><div class="project-right"><span class="status">IN PROGRESS</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="lab"><a href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer"><span class="project-num">/005</span><div><h3 class="project-title">Urban Wheels Nairobi</h3><span class="project-tag">Mobility</span></div><p class="project-desc">A car-rental interface experiment with vehicle discovery, rental details and an M-Pesa payment-flow concept.<span class="project-stack">Frontend · LocalStorage · Payment UX</span></p><div class="project-right"><span class="status">CONCEPT</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="lab"><a href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer"><span class="project-num">/006</span><div><h3 class="project-title">AI Intake → Proposal</h3><span class="project-tag">AI tools</span></div><p class="project-desc">A Node.js experiment that turns a client brief, budget and timeline into a structured proposal. Language-model integration is a next step.<span class="project-stack">Node.js · Forms · AI integration</span></p><div class="project-right"><span class="status">IN DEVELOPMENT</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="lab"><a href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer"><span class="project-num">/007</span><div><h3 class="project-title">Bana Nairobi</h3><span class="project-tag">Storytelling</span></div><p class="project-desc">A Nairobi-set comedy concept about relationships, school life and city stories, built around a recurring 2D cartoon protagonist.<span class="project-stack">Creative direction · Character concept</span></p><div class="project-right"><span class="status">CONCEPT</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="lab"><a href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer"><span class="project-num">/008</span><div><h3 class="project-title">Gunners Aftermath</h3><span class="project-tag">Football</span></div><p class="project-desc">An Arsenal-focused content idea for post-match reactions, tactical observations and supporter conversations.<span class="project-stack">Football · Content concept</span></p><div class="project-right"><span class="status">CONCEPT</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="lab"><a href="https://sengaa.gumroad.com" target="_blank" rel="noopener noreferrer"><span class="project-num">/009</span><div><h3 class="project-title">ProConnect</h3><span class="project-tag">Commerce</span></div><p class="project-desc">A B2B marketplace concept connecting small businesses with service providers, included as an early product-building experience.<span class="project-stack">Marketplace · Product thinking</span></p><div class="project-right"><span class="status">PAST PROJECT</span><span class="project-arrow">↗</span></div></a></li>
+<li class="project fade" data-cat="lab"><a href="https://github.com/Alvin64-source/portfolio" target="_blank" rel="noopener noreferrer"><span class="project-num">/010</span><div><h3 class="project-title">Sengaa Portfolio</h3><span class="project-tag">Personal brand</span></div><p class="project-desc">This site: a portfolio for my projects, technical foundations and experiments, designed with a high-contrast editorial look.<span class="project-stack">HTML · CSS · JavaScript · UX</span></p><div class="project-right"><span class="status live">YOU'RE HERE</span><span class="project-arrow">↗</span></div></a></li>
+</ul></section>
+<section class="log-section section" id="log"><div class="wrap log-grid"><div class="fade"><div class="section-label">[04] / Changelog</div><h2 class="log-title">Learning<br>in prod.</h2></div><div class="fade"><article class="log-entry"><div class="log-date">NOW</div><div><h3>Independent builder</h3><p>Full-stack apps, APIs, databases and AI-powered tools. Build → test → ship → repeat.</p></div></article><article class="log-entry"><div class="log-date">2024–26</div><div><h3>CUEA · Diploma in IT</h3><p>Programming, web technology, databases, IT support and systems fundamentals. Final results and clearance status to be confirmed.</p></div></article><article class="log-entry"><div class="log-date">JAN–APR 2025</div><div><h3>Tourism Fund · Industrial attachment</h3><p>ICT, HR/Admin, Audit, Finance, Strategy, Supply Chain and other teams. Learned how systems carry an organisation.</p></div></article></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="section-label">[05] / Your move</div><h2 class="contact-title">Got a problem<br><span class="acid">worth solving?</span></h2><a class="contact-email" href="mailto:sengaa64@gmail.com">sengaa64@gmail.com ↗</a><p class="contact-note">Open to junior development roles, IT support, freelance builds and collaborations with people making useful things.</p><div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn" href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><a class="btn" href="mailto:sengaa64@gmail.com">Email me ↗</a></div></div></section>
 </main>
-<footer class="wrap"><span>© <span id="year"></span> SENGAA® · Alvin Asenga</span><span>Designed in Nairobi. Built with curiosity.</span><div class="footer-links"><a href="#home">Back to top ↑</a><a href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></footer>
+<footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> SENGAA® · Alvin Asenga</span><span>Built in Nairobi. Shipped with intent.</span><div class="footer-links"><a href="https://github.com/Alvin64-source" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#top">Top ↑</a></div></div></footer>
 <script>
 (function(){
-  var toggle=document.getElementById('menuToggle');
-  var nav=document.getElementById('siteNav');
-  var label=document.getElementById('menuLabel');
-  function closeMenu(){toggle.setAttribute('aria-expanded','false');nav.classList.remove('open');label.textContent='Menu';}
-  toggle.addEventListener('click',function(){var open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);label.textContent=open?'Close':'Menu';});
-  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
-  document.addEventListener('click',function(e){if(!nav.contains(e.target)&&!toggle.contains(e.target))closeMenu();});
-  var filters=document.querySelectorAll('.filter');
-  var projects=document.querySelectorAll('.project');
-  filters.forEach(function(btn){btn.addEventListener('click',function(){var filter=btn.getAttribute('data-filter');filters.forEach(function(b){var active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});projects.forEach(function(card){var categories=(card.getAttribute('data-category')||'').split(' ');card.hidden=filter!=='all'&&categories.indexOf(filter)===-1;});});});
-  var revealEls=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in');io.unobserve(entry.target);}});},{threshold:.08});revealEls.forEach(function(el){io.observe(el);});}else{revealEls.forEach(function(el){el.classList.add('in');});}
+  const menu=document.getElementById('menuBtn'),links=document.getElementById('navLinks');
+  function close(){menu.setAttribute('aria-expanded','false');links.classList.remove('open');menu.textContent='Menu ☰';}
+  menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));links.classList.toggle('open',open);menu.textContent=open?'Close ×':'Menu ☰';});
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+  document.addEventListener('click',e=>{if(!links.contains(e.target)&&!menu.contains(e.target))close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+  document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{const f=button.dataset.filter;document.querySelectorAll('.filter').forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});document.querySelectorAll('.project').forEach(p=>p.hidden=f!=='all'&&p.dataset.cat!==f);}));
+  const fades=document.querySelectorAll('.fade');
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.08});fades.forEach(e=>io.observe(e));}else fades.forEach(e=>e.classList.add('visible'));
   document.getElementById('year').textContent=new Date().getFullYear();
+  const canvas=document.getElementById('matrix'),ctx=canvas.getContext('2d');let cols=[],w=0,h=0,raf=0,last=0;const size=16;
+  function resize(){const dpr=Math.min(window.devicePixelRatio||1,2);w=window.innerWidth;h=window.innerHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);cols=Array(Math.ceil(w/size)).fill(0).map(()=>Math.random()*-45);}
+  function draw(now){raf=requestAnimationFrame(draw);if(now-last<70)return;last=now;ctx.fillStyle='rgba(23,24,21,.18)';ctx.fillRect(0,0,w,h);ctx.fillStyle='#b7ff35';ctx.font=size+'px "JetBrains Mono",monospace';cols.forEach((y,i)=>{ctx.fillText(String(Math.floor(Math.random()*10)),i*size,y*size);cols[i]=y*size>h&&Math.random()>.975?0:y+1;});}
+  if(ctx&& !window.matchMedia('(prefers-reduced-motion: reduce)').matches){resize();window.addEventListener('resize',resize);raf=requestAnimationFrame(draw);}
+  window.addEventListener('pagehide',()=>cancelAnimationFrame(raf));
 })();
 </script>
-</body>
-</html>
+</body></html>
